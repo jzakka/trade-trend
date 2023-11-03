@@ -1,4 +1,4 @@
 package com.example.tradetrend.vo;
 
-public class ResponseCatalog {
+public class ResponseClothe {
 }

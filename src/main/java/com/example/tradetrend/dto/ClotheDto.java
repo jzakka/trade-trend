@@ -1,2 +1,4 @@
-package com.example.tradetrend.dto;public class ClotheDto {
+package com.example.tradetrend.dto;
+
+public class ClotheDto {
 }
