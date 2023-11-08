@@ -5,6 +5,8 @@ import lombok.Data;
 
 @Data
 public class ResponseClothe {
+    private Long id;
+
     private String brand;
 
     private String maker;
@@ -18,4 +20,6 @@ public class ResponseClothe {
     private String mainImg;
 
     private String detail;
+
+    private String link;
 }

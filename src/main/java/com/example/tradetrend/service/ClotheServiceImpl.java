@@ -22,8 +22,8 @@ import java.util.List;
 public class ClotheServiceImpl implements ClotheService{
     private final ClotheRepository clotheRepository;
     private final ModelMapper mapper;
-    private Environment env;
-    private Updater<ClotheEntity, RequestClothe> updater;
+    private final Environment env;
+    private final Updater<ClotheEntity, RequestClothe> updater;
 
     @Override
     public List<ClotheDto> getHottestClothes() {

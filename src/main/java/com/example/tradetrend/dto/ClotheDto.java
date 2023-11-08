@@ -23,4 +23,6 @@ public class ClotheDto {
     private String mainImg;
 
     private String detail;
+
+    private String link;
 }

@@ -18,6 +18,7 @@ import java.util.List;
 public class ClotheController {
     private final ModelMapper mapper;
     private final ClotheService clotheService;
+
     @GetMapping("/hot")
     public ResponseEntity<List<ResponseClothe>> getHottestClothes() {
         List<ClotheDto> hottestClothes = clotheService.getHottestClothes();
@@ -46,11 +47,27 @@ public class ClotheController {
         return ResponseEntity.ok(body);
     }
 
-    @PostMapping("/")
+    @PostMapping
     public ResponseEntity<ResponseClothe> createClothe(@RequestBody RequestClothe requestClothe) {
         ClotheDto clotheDto = clotheService.createClothe(requestClothe);
         ResponseClothe body = mapper.map(clotheDto, ResponseClothe.class);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(body);
+    }
+
+    @DeleteMapping("/{clotheId}")
+    public ResponseEntity deleteClothe(@PathVariable(name = "clotheId") Long clothedId) {
+        clotheService.deleteClothe(clothedId);
+
+        return ResponseEntity.ok().build();
+    }
+
+    @PatchMapping("/{clotheId}")
+    public ResponseEntity<ResponseClothe> updateClothe(@PathVariable(name = "clotheId") Long clothedId,
+                                                       @RequestBody RequestClothe requestClothe) {
+        ClotheDto updateClothe = clotheService.updateClothe(clothedId, requestClothe);
+
+        ResponseClothe body = mapper.map(updateClothe, ResponseClothe.class);
+        return ResponseEntity.ok(body);
     }
 }

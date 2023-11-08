@@ -11,16 +11,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class RequestClothe {
-    @NotNull
     private String brand;
 
-    @NotNull
     private String maker;
 
-    @NotNull
     private String name;
 
-    @NotNull
     private Integer price;
 
     private String category;
@@ -28,4 +24,6 @@ public class RequestClothe {
     private String mainImg;
 
     private String detail;
+
+    private String link;
 }
