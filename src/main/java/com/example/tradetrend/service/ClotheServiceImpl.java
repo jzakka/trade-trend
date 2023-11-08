@@ -27,7 +27,7 @@ public class ClotheServiceImpl implements ClotheService{
 
     @Override
     public List<ClotheDto> getHottestClothes() {
-        return null;
+        return getAllClothes(0);
     }
 
     @Override
