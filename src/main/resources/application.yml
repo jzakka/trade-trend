@@ -27,4 +27,4 @@ spring:
       mode: embedded
 
 file:
-  dir: $HOME/images/
+  dir: ${HOME}/images/
