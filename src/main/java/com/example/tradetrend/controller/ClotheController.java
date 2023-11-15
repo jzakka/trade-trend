@@ -30,8 +30,10 @@ public class ClotheController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<ResponseClothe>> getAllClothes(@RequestParam(defaultValue = "0") Integer page) {
-        List<ClotheDto> allClothes = clotheService.getAllClothes(page);
+    public ResponseEntity<List<ResponseClothe>> getAllClothes(@RequestParam(defaultValue = "0") Integer page,
+                                                              @RequestParam(required = false) String category,
+                                                              @RequestParam(required = false) String brand) {
+        List<ClotheDto> allClothes = clotheService.getAllClothes(page, brand, category);
         List<ResponseClothe> body = allClothes.stream()
                 .map(clotheDto -> mapper.map(clotheDto, ResponseClothe.class))
                 .toList();

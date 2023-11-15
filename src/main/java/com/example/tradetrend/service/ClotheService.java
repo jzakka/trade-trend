@@ -10,7 +10,7 @@ public interface ClotheService {
 
     List<ClotheDto> getAllClothes();
 
-    List<ClotheDto> getAllClothes(Integer page);
+    List<ClotheDto> getAllClothes(Integer page, String brand, String category);
 
     ClotheDto getClothDetail(Long clotheId);
 

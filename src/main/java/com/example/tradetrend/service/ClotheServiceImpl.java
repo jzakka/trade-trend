@@ -27,7 +27,7 @@ public class ClotheServiceImpl implements ClotheService{
 
     @Override
     public List<ClotheDto> getHottestClothes() {
-        return getAllClothes(0);
+        return getAllClothes(0, null, null);
     }
 
     @Override
@@ -41,11 +41,11 @@ public class ClotheServiceImpl implements ClotheService{
     }
 
     @Override
-    public List<ClotheDto> getAllClothes(Integer page) {
+    public List<ClotheDto> getAllClothes(Integer page, String brand, String category) {
         int pageSize = Integer.parseInt(env.getProperty("page.size"));
         Pageable pageable = PageRequest.of(page, pageSize);
 
-        Page<ClotheEntity> all = clotheRepository.findAll(pageable);
+        Page<ClotheEntity> all = clotheRepository.findAllByBrandAndCategory(pageable, brand, category);
         List<ClotheDto> clotheDtos = all.stream()
                 .map(entity -> mapper.map(entity, ClotheDto.class))
                 .toList();

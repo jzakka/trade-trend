@@ -2,7 +2,9 @@
 ----
 모든 품목을 페이지네이션해서 조회.<br/>
 페이지 당 품목 10개.<br/>
-페이지 미지정시 기본 첫 페이지.
+페이지 미지정시 기본 첫 페이지. <br/>
+
+category 와 brand로 필터링 가능
 
 * **URL**
 
@@ -12,10 +14,12 @@
 
   `GET`
 
-*  **URL Params**
+* **URL Params**
 
    **Optional:**
    `page=[integer]`
+   `category=[string]`
+   `brand=[string]`
 
 * **Success Response:**
 
