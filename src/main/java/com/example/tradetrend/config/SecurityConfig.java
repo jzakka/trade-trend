@@ -27,7 +27,8 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfiguration() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
 
-        corsConfiguration.addAllowedOrigin("tradetrend.store");
+        corsConfiguration.addAllowedOrigin("https://tradetrend.store");
+        corsConfiguration.addAllowedOrigin("https://d3w4xp0cypdblm.cloudfront.net");
         corsConfiguration.addAllowedHeader("*");
         corsConfiguration.addAllowedMethod("*");
         corsConfiguration.setAllowCredentials(true);
